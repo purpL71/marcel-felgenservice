@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcel's Felgenservice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Marcel's Felgenservice Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#startseite">Startseite</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#dienstleistungen">Dienstleistungen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="startseite">
+      <h2>Professionelle Pflege für Felgen & Reifen</h2>
+      <p>Reinigung, Lackierung und mehr – alles aus einer Hand.</p>
+    </section>
+
+    <section class="about section" id="ueber-uns">
+      <h2>Über uns</h2>
+      <p>Marcel ist spezialisiert auf professionelle Pflege und Aufbereitung von Felgen und Reifen. Mit jahrelanger Erfahrung sorgt er dafür, dass Ihre Räder wieder wie neu aussehen.</p>
+    </section>
+
+    <section class="services section" id="dienstleistungen">
+      <h2>Dienstleistungen</h2>
+      <ul>
+        <li>Felgenreinigung</li>
+        <li>Felgenlackierung</li>
+        <li>Reifenpflege</li>
+        <li>Entfernung von Kratzern und Schmutz</li>
+        <li>Glanz- und Schutzversiegelung</li>
+      </ul>
+    </section>
+
+    <section class="contact section" id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? Kontaktieren Sie uns gerne!</p>
+      <p>Email: <a href="mailto:marcel@felgenservice.de">marcel@felgenservice.de</a></p>
+      <p>Telefon: 0123 456 789</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Marcel's Felgenservice. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll(".section");
+    const links = document.querySelectorAll("nav a");
+
+    function showSection(id) {
+      sections.forEach(section => {
+        section.style.display = section.id === id ? "block" : "none";
+      });
+    }
+
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const id = this.getAttribute("href").substring(1);
+        showSection(id);
+      });
+    });
+
+    // Show home section on load
+    showSection("startseite");
+  </script>
+</body>
+</html>
